@@ -1,0 +1,2 @@
+Before running tests you must include the following variables in a .env file in the source directory:
+    - FMP_API_KEY : your api key for the FMP api (https://site.financialmodelingprep.com/developer/docs)
