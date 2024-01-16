@@ -43,3 +43,17 @@ def test_FMP_object_general_search_method_accepts_general_search_input_object_an
     for search_element in search_elements :
         assert isinstance(search_element, fmp.schema.SearchElement)
         
+def test_FMP_object_has_get_company_profile_method () :
+    router = fmp.FMP(api_key=api_key)
+    
+    assert hasattr(router, "get_company_profile")
+
+def test_FMP_object_get_company_profile_method_accepts_company_ticket_and_returns_company_profile () :
+    router = fmp.FMP(api_key=api_key)
+    
+    company_profile = router.get_company_profile("AAPL")
+    
+    assert isinstance(company_profile, fmp.CompanyProfile)
+    assert company_profile.symbol == "AAPL"
+
+    
